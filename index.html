@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellfit</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Wellfit</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="tab-container">
+        <div class="tab">
+            <button class="tablinks" id="loginTab" onclick="openTab(event, 'loginPage')">Login</button>
+            <button class="tablinks" id="signupTab" onclick="openTab(event, 'signupPage')">Sign Up</button>
+        </div>
+        <div class="tab" id="loggedInTabs" style="display:none;">
+            <button class="tablinks" onclick="openTab(event, 'homePage')">Home</button>
+            <button class="tablinks" onclick="openTab(event, 'fitnessPage')">Fitness Page</button>
+            <button class="tablinks" onclick="openTab(event, 'nutritionPage')">Nutrition Page</button>
+            <button class="tablinks" id="logoutTab" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Login Page content -->
+        <section id="loginPage" class="tabcontent">
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- Sign Up Page content -->
+        <section id="signupPage" class="tabcontent">
+            <h2>Sign Up</h2>
+            <form id="signup-form" onsubmit="handleSignUp(event)">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+
+        <!-- Home Page content -->
+        <section id="homePage" class="tabcontent" style="display:none;">
+            <h2>Welcome to Your Fitness App!</h2>
+            <p>Discover your path to a healthier lifestyle with our comprehensive fitness and nutrition guides.</p>
+        </section>
+
+        <!-- Fitness Page content -->
+        <section id="fitnessPage" class="tabcontent" style="display:none;">
+            <h2>Fitness Page</h2>
+            <p>This is the content of the Fitness Page.</p>
+        </section>
+
+        <!-- Nutrition Page content -->
+        <section id="nutritionPage" class="tabcontent" style="display:none;">
+            <h2>Nutrition Page</h2>
+            <p>This is the content of the Nutrition Page.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

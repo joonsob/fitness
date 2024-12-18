@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellfit</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Wellfit</h1>
+    </header>
+
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'signupPage')">Sign Up</button>
+            <button class="tablinks" onclick="openTab(event, 'loginPage')">Login</button>
+            <button class="tablinks" onclick="openTab(event, 'homePage')" id="homeTab" style="display: none;">Home</button>
+            <button class="tablinks" onclick="openTab(event, 'fitnessPage')" id="fitnessTab" style="display: none;">Fitness</button>
+            <button class="tablinks" onclick="openTab(event, 'nutritionPage')" id="nutritionTab" style="display: none;">Nutrition</button>
+            <button class="tablinks" onclick="logout()" id="logoutTab" style="display: none;">Logout</button>
+        </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <main>
+
+        <!-- Home Section -->
+        <section id="homePage" class="tabcontent" style="display: none;">
+            <h2>Welcome to Wellfit!</h2>
+            <p>Your path to a healthier lifestyle starts here.</p>
+        </section>
+
+        <!-- Fitness Section -->
+        <section id="fitnessPage" class="tabcontent" style="display: none;">
+            <h2>Fitness Plans</h2>
+            <input type="date" id="workout-date" />
+            <button onclick="showWorkout()">Show Workout</button>
+            <div id="workout-plan"></div>
+        </section>
+
+        <!-- Nutrition Section -->
+        <section id="nutritionPage" class="tabcontent" style="display: none;">
+            <h2>Nutrition Plans</h2>
+            <input type="date" id="meal-date" />
+            <button onclick="showMealPlan()">Show Meal Plan</button>
+            <div id="meal-plan"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
